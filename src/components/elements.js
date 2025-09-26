@@ -1,3 +1,4 @@
+// Weather Form - Main Page 
 export function MainForm(){
   const content = document.getElementById("content")
 
