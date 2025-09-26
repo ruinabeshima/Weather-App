@@ -29,12 +29,14 @@ export function MainForm(){
   // Celcius Button
   const tempCelcius = document.createElement("button")
   tempCelcius.id = "temp-celcius"
+  tempCelcius.type = "button"
   tempCelcius.textContent = "°C"
   buttonContainer.appendChild(tempCelcius)
 
   // Fahrenheit Button 
   const tempFahrenheit = document.createElement("button")
   tempFahrenheit.id = "temp-fahrenheit"
+  tempFahrenheit.type = "button"
   tempFahrenheit.textContent = "°F"
   buttonContainer.appendChild(tempFahrenheit)
 
