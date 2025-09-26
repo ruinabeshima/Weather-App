@@ -75,7 +75,8 @@ export function ShowResults(data){
   // Result heading 
   ResultHeading(data)
 
-
+  // Result content
+  ResultContent(data)
   console.log(data)
 }
 
@@ -116,4 +117,38 @@ function ResultHeading(data){
   currentHumidity.id = "current-humidity"
   currentHumidity.textContent = "H: " + data.currentConditions.humidity + "°"
   resultHeading.appendChild(currentHumidity)
+}
+
+function ResultContent(data){
+  const resultContent = document.getElementById("result-content")
+
+  // Grid container
+  const resultGrid = document.createElement("div")
+  resultGrid.id = "result-grid"
+  resultContent.appendChild(resultGrid)
+
+  // Hours Block 
+  const hoursBlock = document.createElement("div")
+  hoursBlock.id = "hours-block"
+  resultGrid.appendChild(hoursBlock)
+
+  // Days Block
+  const daysBlock = document.createElement("div")
+  daysBlock.id = "days-block"
+  resultGrid.appendChild(daysBlock)
+
+  // Gif Block 
+  const gifBlock = document.createElement("div")
+  gifBlock.id = "gif-block"
+  resultGrid.appendChild(gifBlock)
+
+  // Visibility Block 
+  const visBlock = document.createElement("div")
+  visBlock.id = "vis-block"
+  resultGrid.appendChild(visBlock)
+
+  // Feels like Block 
+  const feelBlock = document.createElement("div")
+  feelBlock.id = "feel-block"
+  resultGrid.appendChild(feelBlock)
 }
