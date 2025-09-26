@@ -82,17 +82,26 @@ body {
 }
 
 
-
-
-
-
-
-
-
-
+/* Results Page */
 
 #result-content {
   width: 100vw; 
   height: 100vh; 
-  background-color: green; 
+  background-color: aliceblue;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
 }
+
+#result-heading {
+  text-align: center; 
+  margin-top: 3rem; 
+  margin-bottom: 3rem; 
+}
+
+#current-temp {
+  font-size: 2.5rem; 
+  font-weight: bold; 
+}
+
+

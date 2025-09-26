@@ -88,7 +88,7 @@ function ResultHeading(data){
   resultContent.appendChild(resultHeading)
 
   // Location name 
-  const resultLocation = document.createElement("h1")
+  const resultLocation = document.createElement("p")
   resultLocation.id = "result-location"
   let dataAddress = data.address
   dataAddress =  dataAddress.charAt(0).toUpperCase() + dataAddress.slice(1).toLowerCase()
