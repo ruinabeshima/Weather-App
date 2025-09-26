@@ -119,7 +119,7 @@ function ResultHeading(data){
   resultHeading.appendChild(currentHumidity)
 }
 
-function ResultContent(data){
+function ResultContent(){
   const resultContent = document.getElementById("result-content")
 
   // Grid container
