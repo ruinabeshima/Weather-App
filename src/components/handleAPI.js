@@ -1,4 +1,5 @@
 import { globalState } from ".."
+import { ShowResults } from "./elements"
 
 // Fetch data from API
 export async function WeatherAPI(location){
@@ -11,6 +12,7 @@ export async function WeatherAPI(location){
 
     const response = await fetch(url)
     const data = await response.json()
+    console.log(data)
     ProcessData(data)
   } catch (error) {
     console.log(error)
@@ -22,10 +24,10 @@ function ProcessData(data){
   const useObjects = 
   { "address": data.address, 
     "currentConditions": data.currentConditions, 
-    "days": data.Days, 
-    "description": data.Description, 
+    "days": data.days, 
+    "description": data.description, 
     "latitude": data.latitude, 
     "longitude": data.longitude, 
     "timezone": data.timezone}
-  console.log(useObjects)
+  ShowResults(useObjects)
 }

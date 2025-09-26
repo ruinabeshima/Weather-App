@@ -1,6 +1,12 @@
+import { globalState } from ".."
+
 // Weather Form - Main Page 
 export function MainForm(){
-  const content = document.getElementById("content")
+  const main = document.getElementById("main")
+
+  const content = document.createElement("div")
+  content.id = "content"
+  main.appendChild(content)
 
   // Main Title 
   const mainTitle = document.createElement("h1")
@@ -51,4 +57,63 @@ export function MainForm(){
   searchButton.textContent = "Search"
   searchButton.id = "search"
   weatherForm.append(searchButton)
+}
+
+export function ShowResults(data){
+
+  // Delete search page 
+  const content = document.getElementById("content")
+  content.remove()
+
+  const main = document.getElementById("main")
+
+  // Main content
+  const resultContent = document.createElement("div")
+  resultContent.id = "result-content"
+  main.appendChild(resultContent)
+
+  // Result heading 
+  ResultHeading(data)
+
+
+  console.log(data)
+}
+
+function ResultHeading(data){
+  const resultContent = document.getElementById("result-content")
+  
+  // Container
+  const resultHeading = document.createElement("div")
+  resultHeading.id = "result-heading"
+  resultContent.appendChild(resultHeading)
+
+  // Location name 
+  const resultLocation = document.createElement("h1")
+  resultLocation.id = "result-location"
+  let dataAddress = data.address
+  dataAddress =  dataAddress.charAt(0).toUpperCase() + dataAddress.slice(1).toLowerCase()
+  resultLocation.textContent = dataAddress
+  resultHeading.appendChild(resultLocation)
+
+  // Current temperature 
+  const currentTemp = document.createElement("p")
+  currentTemp.id = "current-temp"
+  if (globalState.units === "celcius"){
+    currentTemp.textContent = data.currentConditions.temp + "°C"
+  } else if (globalState.units === "fahrenheit"){
+    currentTemp.textContent = data.currentConditions.temp + "°F"
+  }
+  resultHeading.appendChild(currentTemp)
+
+  // Current conditions 
+  const currentConditions = document.createElement("p")
+  currentConditions.id = "current-conditions"
+  currentConditions.textContent = data.currentConditions.conditions
+  resultHeading.appendChild(currentConditions)
+
+  // Current Humidity 
+  const currentHumidity = document.createElement("p")
+  currentHumidity.id = "current-humidity"
+  currentHumidity.textContent = "H: " + data.currentConditions.humidity + "°"
+  resultHeading.appendChild(currentHumidity)
 }
