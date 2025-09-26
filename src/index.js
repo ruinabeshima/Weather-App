@@ -1,6 +1,8 @@
 import "./styles.css"
+import { MainForm } from "./components/elements"
 
 document.addEventListener("DOMContentLoaded", () => {
+  MainForm()
   weatherAPI("london")
   weatherAPI("madrid")
 })
