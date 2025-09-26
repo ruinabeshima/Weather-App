@@ -2,6 +2,7 @@ import "./styles.css"
 import { MainForm } from "./components/elements"
 import { WeatherAPI } from "./components/handleAPI"
 
+
 export const globalState = {
   "units": "celcius"
 }

@@ -13,18 +13,23 @@ export function MainForm(){
   weatherForm.id = "weather-form"
   content.appendChild(weatherForm)
 
+  // Input Container 
+  const inputContainer = document.createElement("div")
+  inputContainer.id = "input-container"
+  weatherForm.appendChild(inputContainer)
+
   // Input inside form 
   const locationInput = document.createElement("input")
   locationInput.type = "text"
   locationInput.id = "location-input"
-  locationInput.placeholder = "Enter location ..."
+  locationInput.placeholder = "Search location ..."
   locationInput.required = true
-  weatherForm.appendChild(locationInput)
+  inputContainer.appendChild(locationInput)
 
   // Button Container 
   const buttonContainer = document.createElement("div")
   buttonContainer.id = "button-container"
-  weatherForm.appendChild(buttonContainer)
+  inputContainer.appendChild(buttonContainer)
 
   // Celcius Button
   const tempCelcius = document.createElement("button")
