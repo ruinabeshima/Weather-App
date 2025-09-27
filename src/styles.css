@@ -133,4 +133,12 @@ body {
   grid-row: 2/4; 
 }
 
+#hours-grid-container {
+  margin: 1rem; 
+  height: 80%;
+  border: 1px solid black; 
+  display: grid; 
+  grid-template-columns: repeat(10, 1fr);
+}
+
 

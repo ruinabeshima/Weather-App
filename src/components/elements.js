@@ -119,7 +119,7 @@ function ResultHeading(data){
   resultHeading.appendChild(currentHumidity)
 }
 
-function ResultContent(){
+function ResultContent(data){
   const resultContent = document.getElementById("result-content")
 
   // Grid container
@@ -131,6 +131,7 @@ function ResultContent(){
   const hoursBlock = document.createElement("div")
   hoursBlock.id = "hours-block"
   resultGrid.appendChild(hoursBlock)
+  HoursBlock(hoursBlock, data)
 
   // Days Block
   const daysBlock = document.createElement("div")
@@ -151,4 +152,36 @@ function ResultContent(){
   const feelBlock = document.createElement("div")
   feelBlock.id = "feel-block"
   resultGrid.appendChild(feelBlock)
+}
+
+function HoursBlock(hoursBlock, data){
+
+  // Grid Container 
+  const hoursGridContainer = document.createElement("div")
+  hoursGridContainer.id = "hours-grid-container"
+  hoursBlock.appendChild(hoursGridContainer)
+
+  // Container Item (10 hours of data)
+  for (let i=0; i<10; i++){
+    const hoursContainerItem = document.createElement("div")
+    hoursContainerItem.classList.add("hours-container-item")
+
+    // Heading
+    const hoursHeading = document.createElement("p")
+    hoursHeading.textContent = i
+    hoursHeading.classList.add("hours-heading")
+    hoursContainerItem.appendChild(hoursHeading)
+
+    // Image Container
+    const hoursIconContainer = document.createElement("div")
+    hoursIconContainer.classList.add("hours-icon-container")
+    hoursContainerItem.appendChild(hoursIconContainer)
+
+    const hoursTemp = document.createElement("div")
+    hoursTemp.classList.add("hours-temp")
+    hoursTemp.textContent = data.days[0].hours[i].temp
+    hoursContainerItem.appendChild(hoursTemp)
+
+    hoursGridContainer.appendChild(hoursContainerItem)
+  }
 }
