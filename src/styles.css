@@ -141,4 +141,21 @@ body {
   grid-template-columns: repeat(10, 1fr);
 }
 
+#result-nav {
+  width: 90%; 
+  padding-top: 2rem;
+}
+
+#go-back {
+  background: rgb(232, 232, 232); 
+  border-radius: 0.5rem; 
+  padding: 0.5rem; 
+  border: none; 
+}
+
+#go-back:hover {
+  box-shadow: 4px 6px 7px -1px rgba(0,0,0,0.33);
+  cursor: pointer; 
+}
+
 

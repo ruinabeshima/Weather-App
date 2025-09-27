@@ -33,4 +33,6 @@ function EventListeners(){
   fah.addEventListener("click", () => {
     globalState.units = "fahrenheit"
   })
+
+ 
 }

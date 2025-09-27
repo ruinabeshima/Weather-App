@@ -2,6 +2,13 @@ import { globalState } from ".."
 
 // Weather Form - Main Page 
 export function MainForm(){
+
+  // Delete result page 
+  const contentDelete = document.getElementById("result-content")
+  if (contentDelete){
+    contentDelete.remove()
+  }
+
   const main = document.getElementById("main")
 
   const content = document.createElement("div")
@@ -67,10 +74,24 @@ export function ShowResults(data){
 
   const main = document.getElementById("main")
 
+
   // Main content
   const resultContent = document.createElement("div")
   resultContent.id = "result-content"
   main.appendChild(resultContent)
+
+  const resultNav = document.createElement("div")
+  resultNav.id = "result-nav"
+  resultContent.appendChild(resultNav)
+
+  const goBackButton = document.createElement("button")
+  goBackButton.textContent = "← Go Back"
+  goBackButton.id = "go-back"
+  resultNav.appendChild(goBackButton)
+
+  goBackButton.addEventListener("click", () => {
+    MainForm()
+  })
 
   // Result heading 
   ResultHeading(data)
