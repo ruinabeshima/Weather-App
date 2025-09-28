@@ -1,6 +1,6 @@
 import "./styles.css"
 import { MainForm } from "./components/elements"
-import { WeatherAPI } from "./components/handleAPI"
+import { WeatherAPI, GiphyAPI } from "./components/handleAPI"
 
 
 export const globalState = {
@@ -10,6 +10,7 @@ export const globalState = {
 document.addEventListener("DOMContentLoaded", () => {
   MainForm()
   EventListeners()
+  GiphyAPI("cloudy")
 })
 
 function EventListeners(){

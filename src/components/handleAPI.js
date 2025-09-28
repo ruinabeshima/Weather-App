@@ -13,14 +13,14 @@ export async function WeatherAPI(location){
     const response = await fetch(url)
     const data = await response.json()
     console.log(data)
-    ProcessData(data)
+    ProcessWeather(data)
   } catch (error) {
     console.log(error)
   }
 }
 
 // Fetch important object elements from data 
-function ProcessData(data){
+function ProcessWeather(data){
   const useObjects = 
   { "address": data.address, 
     "currentConditions": data.currentConditions, 
@@ -30,4 +30,24 @@ function ProcessData(data){
     "longitude": data.longitude, 
     "timezone": data.timezone}
   ShowResults(useObjects)
+}
+
+
+export async function GiphyAPI(weather){
+  try {
+    let url = `https://api.giphy.com/v1/gifs/search?api_key=iidtBip8CzBA9gJdx8z3lNmqf3zEBOCz&q=${weather}&limit=3`
+    const response = await fetch(url)
+    const data = await response.json()
+    console.log(data)
+    ProcessGiphy(dataArray)
+  } catch (error){
+    console.log(error)
+  }
+}
+
+function ProcessGiphy(dataArray){
+  const useObjects = 
+  {
+    "id" = dataArray.data[0]
+  }
 }
